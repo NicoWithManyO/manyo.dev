@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    background-color: royalblue;
+    color : white;
+    /* border-bottom: 5px solid #FFA500; */
+}
+.logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0px;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: clamp(18px, 5vw, 54px);
+    font-weight: bold;
+}
+h3 {
+    font-weight: bold;
+
+}
+h3 span {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-size: clamp(12px, 2vw, 24px);
+}
+
+h3 span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    right: 0;
+    transform: translateX(-10%);
+    background-color: black;
+}
+
+h3:nth-child(2), h3:nth-child(1) {
+    color: transparent;
+}
+
+h3:nth-child(1)  {
+    animation: txt-appaer 0s 1s forwards;
+}
+h3:nth-child(2)  {
+    animation: txt-appaer 0s 1.25s forwards;
+}
+h3:nth-child(1) span::after  {
+    background: royalblue;
+    animation: slide-in 0.75s ease-out forwards,
+    slide-out 0.75s 1s ease-out forwards;
+}
+h3:nth-child(2) span::after  {
+    background: #4169e1;
+    animation: slide-in 0.75s 0.3s ease-out forwards,
+    slide-out 0.75s 1.3s ease-out forwards;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes txt-appaer { 
+    100% {
+        color: white;
+    }
+}
+
+
+
+.dev {
+    color: #FFA500;
+}
+.logo svg {
+    stroke: #FFA500;
+    stroke-width: 3;
+
+}
