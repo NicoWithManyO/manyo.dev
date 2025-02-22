@@ -57,9 +57,7 @@ h3 {
 ul, li {
     list-style: none;
 }
-p {
-    max-width: 400px;
-}
+
 .accent {
     color: #4A9DFF;
 }
@@ -73,8 +71,9 @@ header {
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 40px;
-
-
+    border-bottom: 5px solid transparent;
+    z-index: 100;
+    position: relative;
 }
 .left {
     display: flex;
@@ -120,17 +119,19 @@ header {
 
 }
 .slogan {
-    background-color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30px 0 50px 0;
-
+    padding: 30px 0 30px 0;
+    background-color: #333;
+    border-bottom: 5px solid orange;
+    transition: opacity 1s ease, transform 0.5s ease;
 }
 .slogan i {
     font-size: 1.2em;
+    
 }
 .logo i {
     font-size: clamp(18px, 5vw, 54px);
@@ -144,8 +145,44 @@ header {
     padding: 30px 10px 10px 30px;
     gap: 40px;
     flex-wrap: wrap;
+    max-width: 1400px;
+}
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+
 }
 
-.container p {
-    border: 1px solid black;
+
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 600;
 }
+
+.txt {
+    border: 1px solid black;
+    max-width: 400px;
+}
+.txt-intro {
+    max-width: 800px;
+}
+
+.scrolled {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease, transform 0.5s ease;
+
+}
+
+.bar-scrolled {
+    border-bottom: 5px solid orange;
+    transition: border-bottom 0.5s ease;
+
+}
+
